@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1CC48E8D526E9958A3D45383 /* libPods-iosMathTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33459E3F7CC9ECC36CCA7414 /* libPods-iosMathTests.a */; };
+		46FE187321646459000F6BB5 /* MTFont+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE187221646459000F6BB5 /* MTFont+Internal.swift */; };
+		46FE187521646542000F6BB5 /* MTTypeSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE187421646542000F6BB5 /* MTTypeSetter.swift */; };
+		46FE187721646A83000F6BB5 /* MTMathList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE187621646A83000F6BB5 /* MTMathList.swift */; };
 		490465BF1D23DA8400F82033 /* MTTypesetterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 490465BE1D23DA8400F82033 /* MTTypesetterTest.m */; };
 		492EED0817DAEDD200939107 /* MTFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 492EECFA17DAED9000939107 /* MTFontManager.m */; };
 		492EED0917DAEDD200939107 /* MTFontMathTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 492EECF817DAED9000939107 /* MTFontMathTable.m */; };
@@ -74,6 +77,9 @@
 /* Begin PBXFileReference section */
 		11BDFD1AB91580A33D83C75E /* libPods-iosMathExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosMathExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33459E3F7CC9ECC36CCA7414 /* libPods-iosMathTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosMathTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46FE187221646459000F6BB5 /* MTFont+Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTFont+Internal.swift"; sourceTree = "<group>"; };
+		46FE187421646542000F6BB5 /* MTTypeSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTTypeSetter.swift; sourceTree = "<group>"; };
+		46FE187621646A83000F6BB5 /* MTMathList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMathList.swift; sourceTree = "<group>"; };
 		490465BE1D23DA8400F82033 /* MTTypesetterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTypesetterTest.m; sourceTree = "<group>"; };
 		492EECF317DAED9000939107 /* MTMathListDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMathListDisplay.h; sourceTree = "<group>"; };
 		492EECF417DAED9000939107 /* MTMathUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMathUILabel.h; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 				492EED0117DAEDB500939107 /* MTMathAtomFactory.m */,
 				492EED0217DAEDB500939107 /* MTMathList.h */,
 				492EED0317DAEDB500939107 /* MTMathList.m */,
+				46FE187621646A83000F6BB5 /* MTMathList.swift */,
 				492EED0417DAEDB500939107 /* MTMathListBuilder.h */,
 				492EECFF17DAEDB500939107 /* MTMathListBuilder.m */,
 				49DA6BC319A05F850086B19F /* MTUnicode.h */,
@@ -373,8 +380,10 @@
 			isa = PBXGroup;
 			children = (
 				49DEC80B1CEF1028000053CD /* MTFont+Internal.h */,
+				46FE187221646459000F6BB5 /* MTFont+Internal.swift */,
 				49EEFD7A1D19B664002D15C4 /* MTTypesetter.h */,
 				49EEFD7B1D19B664002D15C4 /* MTTypesetter.m */,
+				46FE187421646542000F6BB5 /* MTTypeSetter.swift */,
 				49EEFD7E1D19B94C002D15C4 /* MTMathListDisplayInternal.h */,
 			);
 			path = internal;
@@ -492,6 +501,13 @@
 			attributes = {
 				LastTestingUpgradeCheck = 0630;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					49965EFB17CBBA2700A555C5 = {
+						DevelopmentTeam = B4S4333JDW;
+						LastSwiftMigration = 1000;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 49965EF717CBBA2700A555C5 /* Build configuration list for PBXProject "iosMath" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -648,8 +664,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FE187521646542000F6BB5 /* MTTypeSetter.swift in Sources */,
+				46FE187321646459000F6BB5 /* MTFont+Internal.swift in Sources */,
 				49B83F0017CF2AE90014B739 /* AppDelegate.m in Sources */,
 				49B83F0217CF2AE90014B739 /* main.m in Sources */,
+				46FE187721646A83000F6BB5 /* MTMathList.swift in Sources */,
 				49B83F0817CF2B420014B739 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -822,11 +841,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D93290960585498BBAEE4535 /* Pods-iosMathExample.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "iosMathExample/iosMath-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MathChat.iosMathExample;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.iosMathExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iosMath/render/internal/iosMathExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -835,11 +863,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B16B9A63054AE3FFB5C36F6B /* Pods-iosMathExample.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = "iosMathExample/iosMath-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MathChat.iosMathExample;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.iosMathExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iosMath/render/internal/iosMathExample-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
